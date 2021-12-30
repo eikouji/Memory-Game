@@ -1,0 +1,10 @@
+Goal of this game:
+
+Grid based game.
+1. flip over a card to reveal an image
+2. flip over a second card to reveal a second image. 
+3. if both cards match, you score a point.
+
+
+empty arrays, pushing and storing items within the array. 
+
