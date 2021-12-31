@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // card options // ----------------
     const cardArray = [
         {
@@ -23,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img: './assets/images/coffee-icon.png',
         },
         {
-            name: 'fizzy soda',
+            name: 'fizzy-soda',
             img: './assets/images/cup-with-straw-icon.png',
         },
         {
@@ -61,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let cardsChosenId = []
       let cardsWon = []
 
-    // create grid board for the memory game // 
+    // create grid board for the memory game, starting with picnic blanket pattern img // 
   function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
           const card = document.createElement('img')
@@ -78,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const optionOneId = cardsChosenId[0]
       const optionTwoId = cardsChosenId[1]
 
-
+ // a match is found // 
       if(optionOneId == optionTwoId) {
           cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
           cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
@@ -90,6 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
           cards[optionOneId].removeEventListener('click', flipCard)
           cards[optionTwoId].removeEventListener('click', flipCard)
           cardsWon.push(cardsChosen)
+
+// if cards do not match, flip card back over to show picnic blanket img card backing //
       } else {
           cards[optionOneId].setAttribute('src', './assets/images/picnic-blanket.png')
           cards[optionTwoId].setAttribute('src', './assets/images/picnic-blanket.png')
@@ -97,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
         cardsChosen = []
         cardsChosenId = []
+
+// displays the game score //
         resultDisplay.textContent = cardsWon.length
           if (cardsWon.length === cardArray.length/2) {
               resultDisplay.textContent = 'Congratulations! You found ALL the matches! Enjoy your picnic!'
