@@ -1,7 +1,11 @@
-// Game Grid dimensions, to be 3 x 4 square grid //
 .grid {
     display: flex;
     flex-wrap: wrap;
-    height: 300px;
     width: 400px;
+    height: 300px;
+    border-style: solid double solid double;
+}
+
+.img {
+    border-style: dotted;
 }

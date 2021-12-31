@@ -4,51 +4,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardArray = [
         {
             name: 'avocado',
-            img: '.\assets\images\avocado.png',
+            img: './assets/images/avocado.png',
         },
         {
             name: 'bananas',
-            img: '.\assets\images\bananas-coloured.png',
+            img: './assets/images/bananas-coloured.png',
         },
         {
             name: 'brioche',
-            img: '.\assets\images\brioche-icon.png',
+            img: './assets/images/brioche-icon.png',
         },
         {
             name: 'cherry',
-            img: '.\assets\images\cherries.png',
+            img: './assets/images/cherries.png',
         },
         {
             name: 'coffee',
-            img: '.\assets\images\coffee-icon.png',
+            img: './assets/images/coffee-icon.png',
         },
         {
             name: 'fizzy soda',
-            img: '.\assets\images\cup-with-straw-icon.png',
+            img: './assets/images/cup-with-straw-icon.png',
         },
         {
             name: 'kiwi-fruit',
-            img: '.\assets\images\kiwi-icon.png',
+            img: './assets/images/kiwi-icon.png',
         },   
         {
             name: 'pineapple',
-            img: '.\assets\images\pineapple.png',
+            img: './assets/images/pineapple.png',
         },
         {
             name: 'salad',
-            img: '.\assets\images\green-salad-icon.png',
+            img: './assets/images/green-salad-icon.png',
         },
         {
             name: 'sandwich',
-            img: '.\assets\images\sandwich-icon.png',
+            img: './assets/images/sandwich-icon.png',
         },
         {
             name: 'strawberry',
-            img: '.\assets\images\strawberry.png',
+            img: './assets/images/strawberry.png',
         },
         {
             name: 'watermelon',
-            img: '.\assets\images\watermelon-slice.png',
+            img: './assets/images/watermelon-slice.png',
         }
 
     ]
@@ -57,15 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')
-      var cardsChosen = []
-      var cardsChosenId = []
-      var cardsWon = []
+      let cardsChosen = []
+      let cardsChosenId = []
+      let cardsWon = []
 
     // create grid board for the memory game // 
   function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
-          var card = document.createElement('img')
-          card.setAttribute('src', '.\assets\images\empty-board-tile.png');
+          const card = document.createElement('img')
+          card.setAttribute('src', './assets/images/picnic-blanket.png');
           card.setAttribute('data-id', i)
           card.addEventListener('click', flipCard)
           grid.appendChild(card)
@@ -74,31 +74,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // check for matches // 
     function checkForMatch() {
-      var cards = document.querySelectorAll('img')
+      const cards = document.querySelectorAll('img')
       const optionOneId = cardsChosenId[0]
       const optionTwoId = cardsChosenId[1]
 
 
-      if(optionsOneId == optionTwoId) {
-          cards[optionOneId].setAttribute('src', '.\assets\images\empty-board-tile.png')
-          card[optionTwoId].setAttribute('src', '.\assets\images\empty-board-tile.png')
+      if(optionOneId == optionTwoId) {
+          cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
+          cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
       }
-      else if (cardsChosen[0] === cardChosen[1]) {
-
-          alert('WOOHOO! You found a matching pair!')
-          card[optionOneId].setAttribute('src', '.\assets\images\empty-board-tile.png')
-          card[optionTwoId].setAttribute('src', '.\assets\images\empty-board-tile.png')
+      else if (cardsChosen[0] === cardsChosen[1]) {
+          alert('You found a matching pair!')
+          cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
+          cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
           cards[optionOneId].removeEventListener('click', flipCard)
           cards[optionTwoId].removeEventListener('click', flipCard)
           cardsWon.push(cardsChosen)
       } else {
-          cards[optionOneId].setAttribute('src', '.\assets\images\picnic-blanket.png')
-          cards[optionTwoId].setAttribute('src', '.\assets\images\picnic-blanket.png')
-          alert('=( No match! =( Try again!')
+          cards[optionOneId].setAttribute('src', './assets/images/picnic-blanket.png')
+          cards[optionTwoId].setAttribute('src', './assets/images/picnic-blanket.png')
+          alert('No match, try again!')
       }
         cardsChosen = []
         cardsChosenId = []
-        resultsDisplay.textContent = cardsWon.length
+        resultDisplay.textContent = cardsWon.length
           if (cardsWon.length === cardArray.length/2) {
               resultDisplay.textContent = 'Congratulations! You found ALL the matches! Enjoy your picnic!'
           }
@@ -107,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // flip your card // 
   function flipCard() {
       let cardId = this.getAttribute('data-id')
-        cardsChosen.push(cardArray[cardID].name)
+        cardsChosen.push(cardArray[cardId].name)
         cardsChosenId.push(cardId)
       this.setAttribute('src', cardArray[cardId].img)
         if (cardsChosen.length === 2) {
