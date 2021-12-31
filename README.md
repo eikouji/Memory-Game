@@ -2,18 +2,32 @@
 
 
 ## Description ## 
+<<<<<<< HEAD
 A game to help me learn JavaScript. One of several projects.
 
 Concepts practiced in this project:
 1.push()
+=======
+A game to help me learn JavaScript. One of several
+
+Concepts used in this game: 
+1. push()
+>>>>>>> main
 2. querySelector()
 3. setAttribute()
 4. getAttribute()
 5. createElement()
+<<<<<<< HEAD
 appendChild()
 Math.random()
 sort()
 For Loops
+=======
+6. appendChild()
+7. Math.random()
+8. sort()
+9. For Loops
+>>>>>>> main
 
 ## My brief intro ##
 Welcome to Picnic Memory Game. Have a nice picnic lunch in the park with
