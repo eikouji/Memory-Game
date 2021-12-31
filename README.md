@@ -2,12 +2,14 @@
 
 
 ## Description ## 
-A game to help me learn JavaScript. One of several
-push()
-querySelector()
-setAttribute()
-getAttribute()
-createElement()
+A game to help me learn JavaScript. One of several projects.
+
+Concepts practiced in this project:
+1.push()
+2. querySelector()
+3. setAttribute()
+4. getAttribute()
+5. createElement()
 appendChild()
 Math.random()
 sort()
@@ -26,7 +28,7 @@ How to play:
 ## Thanks to ##
 freeCodeCamp and @Ania_Kubow, the author of the video tutorial I watched to make this game.
 
-Thank you for being an excellent youtube tutor. 
+Thank you for being an excellent youtube tutor. I had a lot of fun making this game, and I wish to make more!
 
 
 ## Screen Cap of Working Web Page ##
