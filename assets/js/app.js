@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
             img: './assets/images/kiwi-icon.png',
         },   
         {
-            name: 'pineapple',
-            img: './assets/images/pineapple.png',
+            name: 'pear',
+            img: './assets/images/pear-icon.png',
         },
         {
-            name: 'salad',
-            img: './assets/images/green-salad-icon.png',
+            name: 'pineapple',
+            img: './assets/images/pineapple.png',
         },
         {
             name: 'sandwich',
@@ -48,7 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: 'watermelon',
             img: './assets/images/watermelon-slice.png',
-        }
+        },
+        
+
 
     ]
   
@@ -86,9 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
           alert('You found a matching pair!')
           cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
           cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
+          
+          cardsWon.push(cardsChosen)
           cards[optionOneId].removeEventListener('click', flipCard)
           cards[optionTwoId].removeEventListener('click', flipCard)
-          cardsWon.push(cardsChosen)
 
 // if cards do not match, flip card back over to show picnic blanket img card backing //
       } else {
