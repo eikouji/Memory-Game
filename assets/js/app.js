@@ -4,24 +4,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardArray = [
         {
             name: 'avocado',
-            img: '.\assets\images\avocado(1).png',
+            img: '.\assets\images\avocado.png',
         },
         {
             name: 'bananas',
-            img: '.\assets\images\bananas-coloured(1).png',
+            img: '.\assets\images\bananas-coloured.png',
         },
         {
+            name: 'brioche',
+            img: '.\assets\images\brioche-icon.png',
+        },
+        {
+            name: 'cherry',
+            img: '.\assets\images\cherries.png',
+        },
+        {
+            name: 'coffee',
+            img: '.\assets\images\coffee-icon.png',
+        },
+        {
+            name: 'fizzy soda',
+            img: '.\assets\images\cup-with-straw-icon.png',
+        },
+        {
+            name: 'kiwi-fruit',
+            img: '.\assets\images\kiwi-icon.png',
+        },   
+        {
             name: 'pineapple',
-            img: '.\assets\images\pineapple(1).png',
+            img: '.\assets\images\pineapple.png',
+        },
+        {
+            name: 'salad',
+            img: '.\assets\images\green-salad-icon.png',
+        },
+        {
+            name: 'sandwich',
+            img: '.\assets\images\sandwich-icon.png',
         },
         {
             name: 'strawberry',
-            img: '.\assets\images\strawberry(1).png',
+            img: '.\assets\images\strawberry.png',
         },
         {
             name: 'watermelon',
-            img: '.\assets\images\watermelon-slice(1).png',
+            img: '.\assets\images\watermelon-slice.png',
         },
+
 
     ]
   
