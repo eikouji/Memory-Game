@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: 'watermelon',
             img: '.\assets\images\watermelon-slice.png',
-        },
-
+        }
 
     ]
   
@@ -64,42 +63,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // create grid board for the memory game // 
   function createBoard() {
-      for (let i = 0; i < cardArray.length; i++){
+      for (let i = 0; i < cardArray.length; i++) {
           var card = document.createElement('img')
           card.setAttribute('src', '.\assets\images\empty-board-tile.png');
           card.setAttribute('data-id', i)
-          // card.addEventListener('click', flipCard)
+          card.addEventListener('click', flipCard)
           grid.appendChild(card)
       }
   }
 
   // check for matches // 
-  function checkForMatch() {
+    function checkForMatch() {
       var cards = document.querySelectorAll('img')
       const optionOneId = cardsChosenId[0]
       const optionTwoId = cardsChosenId[1]
-      if (cardsChosen[0] === cardsChosen[1]) {
+
+
+      if(optionsOneId == optionTwoId) {
+          cards[optionOneId].setAttribute('src', '.\assets\images\empty-board-tile.png')
+          card[optionTwoId].setAttribute('src', '.\assets\images\empty-board-tile.png')
+      }
+      else if (cardsChosen[0] === cardChosen[1]) {
+
           alert('WOOHOO! You found a matching pair!')
           card[optionOneId].setAttribute('src', '.\assets\images\empty-board-tile.png')
           card[optionTwoId].setAttribute('src', '.\assets\images\empty-board-tile.png')
-          cardsWon.push(cardsChose)
+          cards[optionOneId].removeEventListener('click', flipCard)
+          cards[optionTwoId].removeEventListener('click', flipCard)
+          cardsWon.push(cardsChosen)
       } else {
-          cards[optionOneId].setAttribute('src', '.\assets\images\chBlueWhite(1).png')
-          cards[optionTwoId].setAttribute('src', '.\assets\images\chBlueWhite(1).png')
+          cards[optionOneId].setAttribute('src', '.\assets\images\picnic-blanket.png')
+          cards[optionTwoId].setAttribute('src', '.\assets\images\picnic-blanket.png')
           alert('=( No match! =( Try again!')
       }
         cardsChosen = []
         cardsChosenId = []
         resultsDisplay.textContent = cardsWon.length
-          if (cardsWon.le)
-        }
-  }
+          if (cardsWon.length === cardArray.length/2) {
+              resultDisplay.textContent = 'Congratulations! You found ALL the matches! Enjoy your picnic!'
+          }
+      }
 
   // flip your card // 
   function flipCard() {
-      var cardId = this.getAttribute('data-id')
-      cardsChosen.push(cardArray[cardID].name)
-      cardsChosenId.push(cardId)
+      let cardId = this.getAttribute('data-id')
+        cardsChosen.push(cardArray[cardID].name)
+        cardsChosenId.push(cardId)
       this.setAttribute('src', cardArray[cardId].img)
         if (cardsChosen.length === 2) {
             setTimeout(checkForMatch, 500)
@@ -107,3 +116,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   createBoard()
+
+})
