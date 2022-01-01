@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardArray = [
         {
             name: 'avocado',
-            img: './assets/images/avocado.png',
+            img: './assets/images/avocado-icon.png',
         },
         {
             name: 'bananas',
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: 'strawberry',
-            img: './assets/images/strawberry.png',
+            img: './assets/images/strawberry-icon.png',
         },
         {
             name: 'watermelon',
