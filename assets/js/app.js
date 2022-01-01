@@ -80,9 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const optionTwoId = cardsChosenId[1]
 
       if(optionOneId == optionTwoId) {
+        alert('You have clicked the same image, but did not find a pair! Try again!')
+
           cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
           cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
-          alert('You have clicked the same image!')
+
+          return false;
+      } before 
+      if(cardsChosen[0] === cardsChosen[1]){
+         
+        alert('You found a match')
+        cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
+        cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
+        cardsWon.push(cardsChosen)
 
       }
 
@@ -109,8 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resultDisplay.textContent = cardsWon.length
           if (cardsWon.length === cardArray.length/2) {
               resultDisplay.textContent = 'Congratulations! You found ALL the matches! Enjoy your picnic!'
+              redrawBoard()
+              cardsWon = []
+              setTimeout(()=>{resultDisplay.textContent = "}, 1500)
           }
       }
+
+
 
         // flip your card // 
     function flipCard() {
@@ -159,6 +174,41 @@ I can keep all the fruits I've used up until this point, and retain my original 
 big I want it to be.
 
 How to do this? 
+
+Randomize Cards after clearing the board
+
+ if (cardsWon.length===cardArray.length/2) {
+        resultDisplay.textContent ='Congratulations! You found them all.'
+        redrawBoard()
+        cardsWon = [ ]
+        setTimeout(()=>{ resultDisplay.textContent = '' },1500)
+    }
+
+// Function redrawBoard()
+
+
+function redrawBoard() {
+    var cards = document.querySelectorAll('img')
+    for(let i=0; i < cards.length; i++) {
+      cards[i].setAttribute('src','images/blank.png')
+    }
+    randomizeCards()
+  }
+
+
+// Function randomizeCards
+
+
+  function randomizeCards() {
+    cardArray.sort(()=> 0.5 - Math.random())
+  }
+
+
+
+
+
+
+
 
 
 ----------- */
