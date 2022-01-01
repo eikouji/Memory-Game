@@ -1,146 +1,135 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // card options // ----------------
+    //card options
     const cardArray = [
-        {
-            name: 'avocado',
-            img: './assets/images/avocado-icon.png',
-        },
-        {
-            name: 'bananas',
-            img: './assets/images/bananas-coloured.png',
-        },
-        {
-            name: 'brioche',
-            img: './assets/images/brioche-icon.png',
-        },
-        {
-            name: 'cherry',
-            img: './assets/images/cherries.png',
-        },
-        {
-            name: 'coffee',
-            img: './assets/images/coffee-icon.png',
-        },
-        {
-            name: 'fizzy-soda',
-            img: './assets/images/cup-with-straw-icon.png',
-        },
-        {
-            name: 'kiwi-fruit',
-            img: './assets/images/kiwi-icon.png',
-        },   
-        {
-            name: 'pear',
-            img: './assets/images/pear-icon.png',
-        },
-        {
-            name: 'pineapple',
-            img: './assets/images/pineapple-icon.png',
-        },
-        {
-            name: 'sandwich',
-            img: './assets/images/sandwich-icon.png',
-        },
-        {
-            name: 'strawberry',
-            img: './assets/images/strawberry-icon.png',
-        },
-        {
-            name: 'watermelon',
-            img: './assets/images/watermelon-slice.png',
-        },
-        
-
-
+      {
+        name: 'avocado',
+        img: './assets/images/avocado-icon.png'
+      },
+      {
+        name: 'bananas',
+        img: './assets/images/bananas-coloured.png'
+      },
+      {
+        name: 'brioche-bread',
+        img: './assets/images/brioche-icon.png'
+      },
+      {
+        name: 'cherries',
+        img: './assets/images/cherries.png'
+      },
+      {
+        name: 'coffee-cup',
+        img: './assets/images/coffee-icon.png'
+      },
+      {
+        name: 'soda-pop',
+        img: './assets/images/cup-with-straw-icon.png'
+      },
+      {
+        name: 'kiwi-fruit',
+        img: './assets/images/kiwi-icon.png'
+      },
+      {
+        name: 'lollipop-icon',
+        img: './assets/images/lollipop-icon.png'
+      },
+      {
+        name: 'pear',
+        img: './assets/images/Pear-icon.png'
+      },
+      {
+        name: 'green-bell-pepper',
+        img: './assets/images/pepper-icon.png'
+      },
+      {
+        name: 'pineapple',
+        img: './assets/images/pineapple-icon.png'
+      },
+      {
+        name: 'sandwich',
+        img: './assets/images/sandwich.png'
+      }
     ]
   
     cardArray.sort(() => 0.5 - Math.random())
-
+  
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')
-      let cardsChosen = []
-      let cardsChosenId = []
-      let cardsWon = []
-
-    // create grid board for the memory game, starting with picnic blanket pattern img // 
-  function createBoard() {
+    let cardsChosen = []
+    let cardsChosenId = []
+    let cardsWon = []
+  
+    //create your board
+    function createBoard() {
       for (let i = 0; i < cardArray.length; i++) {
-          const card = document.createElement('img')
-          card.setAttribute('src', './assets/images/picnic-blanket.png');
-          card.setAttribute('data-id', i)
-          card.addEventListener('click', flipCard)
-          grid.appendChild(card)
+        const card = document.createElement('img')
+        card.setAttribute('src', './assets/images/picnic-blanket.png')
+        card.setAttribute('data-id', i)
+        card.addEventListener('click', flipCard)
+        grid.appendChild(card)
       }
-  }
-
-  // check for matches // 
+    }
+  
+    //check for matches
     function checkForMatch() {
       const cards = document.querySelectorAll('img')
       const optionOneId = cardsChosenId[0]
       const optionTwoId = cardsChosenId[1]
-
+      
       if(optionOneId == optionTwoId) {
-        alert('You have clicked the same image, but did not find a pair! Try again!')
-
-          cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
-          cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
-
-          return false;
-      } before 
-      if(cardsChosen[0] === cardsChosen[1]){
-         
-        alert('You found a match')
         cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
         cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
-        cardsWon.push(cardsChosen)
-
+        alert('You have clicked the same image, but did not find a matching pair! Try again!')
       }
-
       else if (cardsChosen[0] === cardsChosen[1]) {
-          alert('You found a matching pair!')
-          cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
-          cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
-          
-          cards[optionOneId].removeEventListener('click', flipCard)
-          cards[optionTwoId].removeEventListener('click', flipCard)
-          cardsWon.push(cardsChosen)
-
-        // if cards do not match, flip card back over to show picnic blanket img card backing //
+        alert('You found a match!')
+        cards[optionOneId].setAttribute('src', './assets/images/empty-board-tile.png')
+        cards[optionTwoId].setAttribute('src', './assets/images/empty-board-tile.png')
+        cards[optionOneId].removeEventListener('click', flipCard)
+        cards[optionTwoId].removeEventListener('click', flipCard)
+        cardsWon.push(cardsChosen)
       } else {
-          cards[optionOneId].setAttribute('src', './assets/images/picnic-blanket.png')
-          cards[optionTwoId].setAttribute('src', './assets/images/picnic-blanket.png')
-          alert('No match, try again!')
+        cards[optionOneId].setAttribute('src', './assets/images/picnic-blanket.png')
+        cards[optionTwoId].setAttribute('src', './assets/images/picnic-blanket.png')
+        alert('Sorry, these cards to not match! Try again!')
       }
-
-        cardsChosen = []
-        cardsChosenId = []
-
-        // displays the game score //
-        resultDisplay.textContent = cardsWon.length
-          if (cardsWon.length === cardArray.length/2) {
-              resultDisplay.textContent = 'Congratulations! You found ALL the matches! Enjoy your picnic!'
-              redrawBoard()
-              cardsWon = []
-              setTimeout(()=>{resultDisplay.textContent = "}, 1500)
-          }
+      cardsChosen = []
+      cardsChosenId = []
+      resultDisplay.textContent = cardsWon.length
+      if  (cardsWon.length === cardArray.length/2) {
+        resultDisplay.textContent = 'Congratulations! You found them all!'
       }
-
-
-
-        // flip your card // 
+    }
+  
+    //flip your card
     function flipCard() {
       let cardId = this.getAttribute('data-id')
-        cardsChosen.push(cardArray[cardId].name)
-        cardsChosenId.push(cardId)
+      cardsChosen.push(cardArray[cardId].name)
+      cardsChosenId.push(cardId)
       this.setAttribute('src', cardArray[cardId].img)
-        if (cardsChosen.length ===2) {
-            setTimeout(checkForMatch, 500)
-        }
+      if (cardsChosen.length ===2) {
+        setTimeout(checkForMatch, 500)
+      }
     }
 
-  createBoard()
+    /*
+    function flipCard() {
+        if (this.getAttribute('src') !=='./assets/images/picnic-blanket.png') return;
+        var cardId = this.getAttribute('data-id')
+          cardsChosen.push(cardArray[cardId].name)
+          cardsChosenId.push(cardId)
+          this.setAttribute('src', cardArray[cardId].img)
+          if (cardsChosen.length === 2) {
+              setTimeout(checkForMatch, 600)
+          } 
+    }
+  
+    createBoard()
+  })
 
-})
+
+
+
 
 
 /* --------------------
