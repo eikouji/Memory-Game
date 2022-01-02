@@ -9,10 +9,13 @@
     padding: 30px;
     border: 5px;
     border-style: dashed double;
-    border-color: black;
-    background: green;
-
+    border-color: rgb(35, 58, 35);
+    background-image: linear-gradient(to right, rgb(110, 236, 110), rgb(135, 222, 252), rgb(136, 250, 161), rgb(149, 215, 236));
 }
+
+
+
+
 
 img {
     border: solid white;
