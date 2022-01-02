@@ -112,6 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+  // copyWithin() copies array elements to another position in the array, does not add items to the array
+  // array.copyWithin(target, start, end). target - required. start default is 0, end default is array length.
+  // cardArray.copyWithin(6, 0, 0) after position 6, copy 
+
+
+
+
+
+
+
     /*
     function flipCard() {
         if (this.getAttribute('src') !=='./assets/images/picnic-blanket.png') return;
