@@ -22,6 +22,7 @@ youtube tutor.
 
 ## Screen Cap of Working Web Page ##
 
+![Picnic ScreenCap](https://user-images.githubusercontent.com/91100425/148658345-67d45a46-666d-4a60-8ce8-c8dfa538fafc.jpg)
 
 
 
@@ -31,4 +32,10 @@ youtube tutor.
 
 
 
+https://user-images.githubusercontent.com/91100425/148659558-06c7d69a-21d2-46ad-8d75-1f41fbbc9c71.mp4
+
+
+
 ## URL of web page ##
+
+https://eikouji.github.io/Memory-Game/
