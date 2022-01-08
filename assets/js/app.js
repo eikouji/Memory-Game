@@ -6,8 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
         img: './assets/images/avocado-icon.png'
       },
       {
+        name: 'avocado',
+        img: './assets/images/avocado-icon.png'
+      },
+      {
         name: 'bananas',
         img: './assets/images/bananas-coloured.png'
+      },
+      {
+        name: 'bananas',
+        img: './assets/images/bananas-coloured.png'
+      },
+      {
+        name: 'brioche-bread',
+        img: './assets/images/brioche-icon.png'
       },
       {
         name: 'brioche-bread',
@@ -18,16 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         img: './assets/images/cherries.png'
       },
       {
-        name: 'coffee-cup',
-        img: './assets/images/coffee-icon.png'
+        name: 'cherries',
+        img: './assets/images/cherries.png'
       },
       {
-        name: 'soda-pop-drink',
-        img: './assets/images/drink-with-straw-icon.png'
-      },
-      {
-        name: 'kiwi-fruit',
-        img: './assets/images/kiwi-icon.png'
+        name: 'lollipop-icon',
+        img: './assets/images/lollipop-icon.png'
       },
       {
         name: 'lollipop-icon',
@@ -38,17 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
         img: './assets/images/Pear-icon.png'
       },
       {
-        name: 'green-bell-pepper',
-        img: './assets/images/pepper-icon.png'
+        name: 'pear',
+        img: './assets/images/Pear-icon.png'
       },
-      {
-        name: 'pineapple',
-        img: './assets/images/pineapple-icon.png'
-      },
-      {
-        name: 'sandwich',
-        img: './assets/images/sandwich-icon.png'
-      }
+      
     ]
   
     cardArray.sort(() => 0.5 - Math.random())
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cardsChosenId = []
       resultDisplay.textContent = cardsWon.length
       if  (cardsWon.length === cardArray.length/2) {
-        resultDisplay.textContent = 'Congratulations! You found them all!'
+        resultDisplay.textContent = ' Congratulations! You found them all!'
       }
     }
   
@@ -116,12 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // array.copyWithin(target, start, end). target - required. start default is 0, end default is array length.
   // cardArray.copyWithin(6, 0, 0) after position 6, copy 
 
-
-
-
-
-
-
     /*
     function flipCard() {
         if (this.getAttribute('src') !=='./assets/images/picnic-blanket.png') return;
@@ -136,10 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     createBoard()
   })
-
-
-
-
 
 
 /* --------------------
@@ -171,9 +162,6 @@ the game board, creating variety.
 6. keep playing and clearing the board, with new boards generating after each clearing.
 
 7. Don't break the other functions!
-
-
-
 
 
 ----------- */
